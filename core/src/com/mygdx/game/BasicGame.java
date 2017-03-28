@@ -24,6 +24,7 @@ public class BasicGame extends ApplicationAdapter {
 	TextureAtlas textureAtlas;
 	Sprite banana;
 	World world;
+	Player player;
 	//PEXML physicsbodies;
 	float x =300;
 	float y= 300;
@@ -45,6 +46,8 @@ public class BasicGame extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		textureAtlas = new TextureAtlas("sprites.txt");
 		banana = textureAtlas.createSprite("banana");
+		player = new Player("cherries");
+
 		bananaBounds = new Rectangle(banana.getX(),banana.getY(),banana.getWidth(),100000);
 		world = new World(new Vector2(0,-10),true);
 
@@ -58,29 +61,18 @@ public class BasicGame extends ApplicationAdapter {
 		batch.begin();
 
 		drawsprite("banana",0,0);
-		drawsprite("cherries",x,y);
-		cherryBounds = new Rectangle(x,y,10,10);
-		handlePlayerInput();
+		movePlayer();
 
 		batch.end();
 		world.step(1/60f, 6, 2);
 	}
 
-	public void handlePlayerInput() {
-		if(!bananaBounds.overlaps(cherryBounds)) {
 
-			if (input.isKeyPressed(Input.Keys.W)) y = y + 10;
-
-			else if (input.isKeyPressed(Input.Keys.S)) y = y - 10;
-
-			if (input.isKeyPressed(Input.Keys.A)) x = x - 10;
-
-			else if (input.isKeyPressed(Input.Keys.D)) x = x + 10;
-
-		}
-
+	public void movePlayer(){
+		drawsprite(player.name,player.getPlayerX(),player.getPlayerY());
+		cherryBounds = new Rectangle(player.getPlayerX(),player.getPlayerY(),10,10);
+		player.handlePlayerInput();
 	}
-
 
 	// Logic for drawing sprites on the screen
 	public void drawsprite(String name, float x, float y){
