@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- created with http://www.physicseditor.de -->
+<bodydef version="1.0">
+	<bodies>
+
+		<body name="banana">
+            <anchorpoint>0.0000,0.0000</anchorpoint>
+			<fixtures>
+
+			</fixtures>
+		</body>
+
+		<body name="cherries">
+            <anchorpoint>0.0000,0.0000</anchorpoint>
+			<fixtures>
+
+			</fixtures>
+		</body>
+
+		<body name="crate">
+            <anchorpoint>0.0000,0.0000</anchorpoint>
+			<fixtures>
+
+			</fixtures>
+		</body>
+
+		<body name="orange">
+            <anchorpoint>0.0000,0.0000</anchorpoint>
+			<fixtures>
+
+			</fixtures>
+		</body>
+
+	</bodies>
+	<metadata>
+		<format>1</format>
+		<ptm_ratio>32</ptm_ratio>
+	</metadata>
+</bodydef>
+
+
+
