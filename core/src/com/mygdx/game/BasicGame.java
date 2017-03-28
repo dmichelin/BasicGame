@@ -25,8 +25,8 @@ public class BasicGame extends ApplicationAdapter {
 	Sprite banana;
 	World world;
 	//PEXML physicsbodies;
-	int x =300;
-	int y= 300;
+	float x =300;
+	float y= 300;
 
 
 	Rectangle bananaBounds;
@@ -45,7 +45,7 @@ public class BasicGame extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		textureAtlas = new TextureAtlas("sprites.txt");
 		banana = textureAtlas.createSprite("banana");
-		bananaBounds = new Rectangle(banana.getX(),banana.getY(),banana.getWidth(),banana.getHeight());
+		bananaBounds = new Rectangle(banana.getX(),banana.getY(),banana.getWidth(),100000);
 		world = new World(new Vector2(0,-10),true);
 
 	}
